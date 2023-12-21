@@ -1,30 +1,29 @@
-# DockerParaGPU
+ DockerParaGPU
 muestro los comandos utiles para crear un docker de tensorflow
 
 Primero instalar docker
 
 Despues crear el archivo docker debe llamarse Dockerfile:
 
-
 interior del archivo 
 -----------------------------------------------------
-# Empezar con una imagen base de CUDA con TensorFlow
+% Empezar con una imagen base de CUDA con TensorFlow
 FROM tensorflow/tensorflow:latest-gpu
 
-# Configurar el directorio de trabajo
+% Configurar el directorio de trabajo
 WORKDIR /app
 
-# Copiar y crear el entorno Conda
+% Copiar y crear el entorno Conda
 COPY requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt 
 
-# Exponer el puerto 8888
+% Exponer el puerto 8888
 EXPOSE 8888
 
-# Copiar los archivos de la aplicación
+% Copiar los archivos de la aplicación
 COPY . /app
 
-# Comando para iniciar Jupyter Notebook
+% Comando para iniciar Jupyter Notebook
 CMD ["jupyter", "notebook", "--notebook-dir=/app", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
 
 ------------------------------------------------------
