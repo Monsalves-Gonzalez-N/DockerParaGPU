@@ -63,6 +63,10 @@ abrir la imagen utilizando todas las gpu, asignando el puerto para el jupyter, m
 
 sudo docker run -it --gpus all -p 8888:8888 -v /home/nicolas:/home/nicolas deep /bin/bash
 
+Tambien si nos gusta mas tensorman
+
+sudo tensorman =deep run -p 8888:8888 --gpu --jupyter  bash
+
 moverse por la terminal a la carpeta donde queremos abrir el jupyter notebook y utilizar 
 
 jupyter notebook --allow-root --ip=0.0.0.0 --no-browser
