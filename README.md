@@ -6,8 +6,8 @@ Primero instalar docker
 Despues crear el archivo docker debe llamarse Dockerfile:
 
 interior del archivo 
------------------------------------------------------
-Empezar con una imagen base de CUDA con TensorFlow
+*********************************************************************
+Empezar con una imagen base de 1CUDA con TensorFlow
 FROM tensorflow/tensorflow:latest-gpu
 
 Configurar el directorio de trabajo
@@ -26,12 +26,11 @@ COPY . /app
 Comando para iniciar Jupyter Notebook
 CMD ["jupyter", "notebook", "--notebook-dir=/app", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
 
-------------------------------------------------------
-
+*********************************************************************
 en la misma carpeta agregar el archivo requiremetents.txt con las versiones de pip que queremos instalar
 
 interior del archivo 
----------------------------------
+*********************************************************************
 h5py
 scikit-learn==1.3.0
 pandas==2.0.3
@@ -47,8 +46,7 @@ plotly==5.9.0
 seaborn==0.12.2
 imbalanced-learn==0.11.0
 wget
------------------------------------------------
-
+*********************************************************************
 despues construir el docker
 
 sudo docker build -t nombre .
