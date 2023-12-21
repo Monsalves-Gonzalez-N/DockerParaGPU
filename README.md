@@ -8,27 +8,20 @@ Despues crear el archivo docker debe llamarse Dockerfile:
 interior del archivo 
 *********************************************************************
 #Empezar con una imagen base de CUDA con TensorFlow
-
 FROM tensorflow/tensorflow:latest-gpu
-
 #Configurar el directorio de trabajo
 WORKDIR /app
-
 #Copiar y crear el entorno Conda
 COPY requirements.txt /app/requirements.txt
 #RUN pip install -r /app/requirements.txt 
-
 #Exponer el puerto 8888
 EXPOSE 8888
-
 #Copiar los archivos de la aplicación
 COPY . /app
-
 #Comando para iniciar Jupyter Notebook
 CMD ["jupyter", "notebook", "--notebook-dir=/app", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
-
 *********************************************************************
-en la misma carpeta agregar el archivo requiremetents.txt con las versiones de pip que queremos instalar
+En la misma carpeta agregar el archivo requiremetents.txt con las versiones de pip que queremos instalar 
 
 interior del archivo 
 *********************************************************************
