@@ -7,7 +7,8 @@ Despues crear el archivo docker debe llamarse Dockerfile:
 
 interior del archivo 
 *********************************************************************
-Empezar con una imagen base de 1CUDA con TensorFlow
+#Empezar con una imagen base de CUDA con TensorFlow
+
 FROM tensorflow/tensorflow:latest-gpu
 
 Configurar el directorio de trabajo
